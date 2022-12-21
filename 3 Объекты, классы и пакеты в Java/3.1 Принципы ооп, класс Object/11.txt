@@ -1,0 +1,7 @@
+В чём разница между сравнением через instanceOf и через getClass?
+
+Сравнение методом getClass вернёт true только в случае, если объект является экземпляром класса. 
+Оператор instanceOf вернёт true, если объект является экземпляром класса ЛИБО экземпляром класса-наследника. 
+
+System.out.println(cat.getClass() == dog.getClass()); // false
+System.out.println(cat instanceof dog); // true
