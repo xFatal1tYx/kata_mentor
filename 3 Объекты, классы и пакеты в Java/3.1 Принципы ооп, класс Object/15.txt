@@ -1,0 +1,52 @@
+Зачем нужен enum?
+
+Перечисления объектов объявляются словом enum, их удобно использовать если нам необходимо ограничить возможные варианты параметров. 
+Объявляя enum мы неявно создаем класс производный от абстрактного java.lang.Enum.
+
+- Enum можно создать в отдельном файле, внутри или вне классов;
+- Enum нельзя наследовать от других классов;
+- Конструкторы в enum создаются с модификатором private (по умолчанию);
+- У элементов enum модификаторы public static final;
+- Java автоматически подразумевает new при перечислении объектов в enum;
+- В enum можно объявить поля и методы. Тогда после всех элементов нужно поставить ‘;’
+
+public enum DayOfWeek {
+	MONDAY("Понедельник"),
+	TUESDAY("Вторник"),
+	...,
+	SUNDAY("Воскресенье");
+
+	//поля, методы
+	private string translation;
+
+	DayOfWeek(String translation) {
+		this.translation = translation; 
+	}
+
+	public String toString() {
+		return translation;
+	}
+}
+
+Задать элемент enum, можно следующим образом: DayOfWeek day = DayOfWeek.SUNDAY;
+Или так: DayOfWeek day = DayOfWeek.valueOf("SUNDAY");
+
+Вывод всех элементов с порядковым номером и именем:
+for (DayOfWeek day : DayOfWeek.values()) {
+	println(day.ordinal() + " " + day.name());
+}
+
+Также в enum можно определять методы для отдельных констант:
+enum Operation{
+    SUM{
+        public int action(int x, int y){ return x + y;}
+    },
+    SUBTRACT{
+        public int action(int x, int y){ return x - y;}
+    },
+    MULTIPLY{
+        public int action(int x, int y){ return x * y;}
+    };
+
+    public abstract int action(int x, int y);
+}
