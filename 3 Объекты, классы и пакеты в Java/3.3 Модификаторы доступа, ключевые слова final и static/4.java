@@ -1,5 +1,5 @@
 
-// final может быть у неабстрактного класса и метода, а также у сразу инициализированной переменной
+// final может быть у неабстрактного и нестатического класса, неабстракт. метода, а также у сразу инициализированной переменной
 public final class Main  {
 
     final Integer a = 10;
@@ -7,6 +7,8 @@ public final class Main  {
     final void justFunction(final String a) {
         final String b = a;
     }
+    
+    final static void justStaticFunction() {}
   
     // Variable might not have been initialized
     final Integer b;
@@ -20,9 +22,12 @@ public final class Main  {
 }
 
 // Illegal combination of modifiers
-final abstract class JustClass() {
+final abstract class JustAbstractClass() {
 
     // Illegal combination of modifiers
     final abstract void justFunction();
 
 }
+
+// Modifier 'static' not allowed here
+final static class JustStaticClass() {}
