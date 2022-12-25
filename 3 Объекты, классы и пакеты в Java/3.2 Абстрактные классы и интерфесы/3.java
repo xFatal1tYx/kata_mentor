@@ -16,7 +16,7 @@ interface Printable {
             case RESPECTFULLY -> "\n\nRespectfully yours ";
             case SINCERELY -> "\n\nSincerely yours ";
             case GRATITUDE -> "\n\nWith gratitude ";
-            default -> "\n\nBest wishes ";
+            case WISHES -> "\n\nBest wishes ";
         };
     }
 
