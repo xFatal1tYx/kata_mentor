@@ -31,3 +31,6 @@ final abstract class JustAbstractClass() {
 
 // Modifier 'static' not allowed here
 final static class JustStaticClass() {}
+
+// Modifier 'static' not allowed here
+final enum JustEnum {}
