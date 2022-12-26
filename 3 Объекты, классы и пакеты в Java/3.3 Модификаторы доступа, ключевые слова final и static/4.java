@@ -1,5 +1,5 @@
 
-// final может быть у неабстрактного и нестатического класса, неабстракт. метода, а также у сразу инициализированной переменной
+// final может быть у неабстрактного класса и метода, а также у сразу инициализированной переменной
 public final class Main  {
 
     final Integer a = 10;
@@ -29,8 +29,5 @@ final abstract class JustAbstractClass() {
 
 }
 
-// Modifier 'static' not allowed here
-final static class JustStaticClass() {}
-
-// Modifier 'static' not allowed here
+// Modifier 'final' not allowed here
 final enum JustEnum {}
