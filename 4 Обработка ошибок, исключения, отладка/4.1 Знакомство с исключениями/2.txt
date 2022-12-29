@@ -1,0 +1,24 @@
+Исключения в Java делятся на 3 группы:
+
+1) java.lang.Error - исключения JVM. 
+Эти ошибки не обрабатываются, после них программа не сможет продолжить выполнение.
+
+OutOfMemoryError (нехватка памяти)
+NoClassDefFoundError (не удалось найти класс, на который ссылается программа)
+VerifyError (класс найден, но его байт-код некорректен)
+
+2) java.lang.Exception - исключения в пользовательском коде (checked / compile time exception)
+Такие ошибки проверяются компилятором, напр. при работе с чтением данных, компилятор потребует добавить обработчик исключений. 
+
+IOException()
+FileNotFoundException()
+ClassNotFoundException()
+
+3) java.lang.RuntimeException - исключения в пользовательсокм коде (unchecked / runtime exception)
+Такие ошибки НЕ проверяются компилятором. От возникновения таких исключений стоит избавляться, т.е. в правильной программе они вприницпе не должны возникнуть.
+
+java.lang.NullPointerException
+java.lang.ArrayIndexOutOfBoundsException
+java.lang.ArithmeticException
+
+
