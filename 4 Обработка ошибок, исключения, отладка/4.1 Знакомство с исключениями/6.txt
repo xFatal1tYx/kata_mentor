@@ -1,0 +1,13 @@
+Какие методы есть у класса Throwable?
+
+- String getMessage() возвращает описание исключения;
+- String getLocalizedMessage() возвращает локализованное описание исключения;
+- setStackTrace(StackTraceElement elements[]) устанавливает трассировку стека для элементов;
+- printStackTrace() / (PrintStream/PrintWriter) выводит stacktrace, стандартный обработчик делает это автоматически в System.err. 
+Трассировку можно записать в файл/поток/получить в виде строки;
+- StackTraceElement[] getStackTrace() возвращает массив объектов (стек). На вершине будет метод, в котором произошло исключение;
+- Throwable getCause() возвращает предыдущее исключение из цепочки, или null, если такого нет;
+- Throwable initCause(Throwable exception) ассоциирует исключение с вызывающим исключением. Возвращает ссылку на исключение.
+- addSuppressed(Throwable) добавляет исключение в список подавляемых;
+- Throwable[] getSuppressed() возвращает список подавленных исключений;
+- Throwable fillInStackTrace() возвращает Throwable содержащий полную трассировку.
