@@ -1,8 +1,5 @@
 // Вывод: Exception in thread "main" java.io.IOException: exception from close() и аварийное завершение программы.
-// Мы могли бы обрабатывать все исключения, чтобы программа не завершалась. 
-// Но тогда, если бы в блоке метода Main было поймано другое исключение, то исключение метода close() было бы подавлено.
 
-import java.io.Closeable;
 import java.io.IOException;
 
 class Test implements AutoCloseable {
