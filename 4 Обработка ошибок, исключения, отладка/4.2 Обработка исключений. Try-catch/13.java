@@ -1,4 +1,4 @@
-// Второе исключение подавит первое.
+// Второе исключение полностью перекроет (затрёт) первое.
 // Вывод: Exception in thread "main" java.lang.RuntimeException: something went wrong x2
 
 public class Main {
