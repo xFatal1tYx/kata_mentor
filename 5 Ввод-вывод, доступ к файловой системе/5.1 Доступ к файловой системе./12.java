@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -10,9 +11,15 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String... args) throws IOException {
-        Path notEmptyDirectory = Path.of("C:\\123");
 
-        // Exception: DirectoryNotEmptyException
+        // Удаление через класс File. result = false
+        File notEmptyFolder = new File("C:\\123");
+        boolean result = notEmptyFolder.delete();
+
+        // Преобразование File в Path
+        Path notEmptyDirectory = notEmptyFolder.toPath();
+
+        // Удаление через класс Files. Exception: DirectoryNotEmptyException
         Files.deleteIfExists(notEmptyDirectory);
 
         // Удаление с помощью перебора через стрим и метода Files.walk()
@@ -20,6 +27,7 @@ public class Main {
 
         // Удаление с помощью класса SimpleFileVisitor и метода Files.walkFileTree()
         deleteByWalkFileTree(notEmptyDirectory);
+        
     }
 
     public static void deleteByWalkFileTree(Path notEmptyDirectory) throws IOException {
@@ -43,7 +51,7 @@ public class Main {
         );
     }
 
-    static void deleteByStream(Path notEmptyDirectory) throws IOException {
+    public static void deleteByStream(Path notEmptyDirectory) throws IOException {
         if (!Files.exists(notEmptyDirectory)) {
             return;
         }
@@ -59,5 +67,5 @@ public class Main {
             });
         }
     }
-
+    
 }
