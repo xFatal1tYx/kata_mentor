@@ -1,0 +1,10 @@
+6.	Почему последняя строчка не компилируется?
+
+List<ArrayList> list1 = new ArrayList<ArrayList>();
+ArrayList<List> list1 = new ArrayList<ArrayList>();
+
+Потому что, Variable 'list1' is already defined :)
+
+Если серьёзно, то это свазано с инвариантностью дженериков.
+Дженерики без вайлдкардов инвариантны: в List<Number> нельзя положить ни в переменную типа List<Double>, ни List<Object>.
+т.е. Отношение предок-родитель не работает. Это сделано для типобезопасности.
