@@ -1,4 +1,4 @@
-6.	Почему последняя строчка не компилируется?
+Почему последняя строчка не компилируется?
 
 List<ArrayList> list1 = new ArrayList<ArrayList>();
 ArrayList<List> list1 = new ArrayList<ArrayList>();
