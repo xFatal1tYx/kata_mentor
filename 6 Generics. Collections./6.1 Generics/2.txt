@@ -1,0 +1,23 @@
+Как до введения generics можно было сделать обобщенный класс?
+
+Дженерики в Java реализовывались с расчетом на использование во время компиляции: в байт-коде дженериков нет. 
+
+На уровне байт-кода работа идет просто с Object. При использовании дженериков компилятор проверяет типы. 
+Процесс, при котором компилятор не оставляет среде исполнения никакой информации о дженериках, называется стиранием типов.
+
+Соответственно до появления дженериков, можно было сделать обобщенный класс с объектом типа Object, и оперировать с ним при помощи явного приведения. 
+Но возникает проблема безопасности типов.
+
+class CommonClass {
+    public final Object id;
+    public CommonClass(Object id) {
+        this.id = id;
+    }
+}
+
+public static void main(String[] args) {
+    CommonClass stringObject = new CommonClass("123");
+    CommonClass intObject = new CommonClass(123);
+    int id = (int) intObject.id;
+    id = (int) stringObject.id; // ClassCastException
+}
