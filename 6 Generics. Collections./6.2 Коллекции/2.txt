@@ -1,0 +1,16 @@
+Все методы интерфейса Collection?
+
+Общие методы для интерфейса коллекции
+int size() – возвращает количество элементов коллекции;
+boolean isEmpty() – вернёт true, если коллекция не содержит элементов;
+boolean contains(object o) – вернёт true, если коллекция содержит переданный объект (equals);
+Object[] toArray() – возвращает массив со всеми элементами коллекции;
+boolean add(E e) – вернёт true, если элемент был добавлен;
+boolean remove(Object o) – вернёт true, если в коллекции был найден и удалён объект (equals);
+boolean containsAll(Collection<?> c) – вернёт true, если две коллекции идентичны по элементам;
+boolean addAll(Collection<? extends E> c) – добавляет все элементы из переданной коллекции;
+boolean removeAll(Collection<?> c) – удалит все элементы, которые есть в обеих коллекциях;
+boolean retainAll(Collection<?> c) – удалит элементы, которых нет в переданной коллекции;
+void clear() – удаляет все элементы коллекции;
+default boolean removeIf(Predicate<? super E> filter) – удалит элементы по условию предиката;
+default Stream<E> stream() / parallelStream() – возвращает последовательный / параллельный стрим с элементами этой коллекции;
