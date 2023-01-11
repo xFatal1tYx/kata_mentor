@@ -1,0 +1,15 @@
+Иерархия коллекций?
+
+Коллекции находятся в пакете java.util.*
+На вершине иерархии в Java Collections располагаются два интерфейса: Collection и Map.
+
+Все классы и интерфейсы в порядке наследования Collection ( => extends; -> implements):
+Iterable => Collection => List & => Queue & => Set
+
+List -> ArrayList & -> LinkedList & -> Vector ( => Stack)
+Queue => Deque ( => ArrayDeque & -> LinkedList)
+Set => SortedSet ( => TreeSet) & -> HashSet ( => LinkedHashSet) & -> LinkedHashSet 
+
+Map не наследуются от коллекций (потому что это разные структуры данных), но его также связывают с ними.
+Все классы и интерфейсы в порядке наследования Map:
+Map -> HashTable & -> HashMap ( => LinkedHashMap) & -> LinkedHashMap & => SortedMap ( -> TreeMap)
