@@ -1,0 +1,7 @@
+Как работает метод contains в ArrayList / LinkedList / HashSet? 
+
+Метод contains в Arraylist использует метод indexOf(), который использует в свою очередь метод indexOfRange().
+Там совершается обход элементов в цикле и если элемент не null, то вызывается стандартный метод equals (сравнение ссылок). 
+Тоже самое для LinkedList.
+
+В методе contains HashSet Метод containsKey() находит корзину, ноды которой сравниваются сначала по hashcode, а только потом по equals.
