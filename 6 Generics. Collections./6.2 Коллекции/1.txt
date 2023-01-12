@@ -7,7 +7,7 @@
 Iterable => Collection => List & => Queue & => Set
 
 List -> ArrayList & -> LinkedList & -> Vector ( => Stack)
-Queue => Deque ( => ArrayDeque & -> LinkedList)
+Queue => Deque ( -> ArrayDeque & -> LinkedList)
 Set => SortedSet ( => TreeSet) & -> HashSet ( => LinkedHashSet) & -> LinkedHashSet 
 
 Map не наследуются от коллекций (потому что это разные структуры данных), но его также связывают с ними.
