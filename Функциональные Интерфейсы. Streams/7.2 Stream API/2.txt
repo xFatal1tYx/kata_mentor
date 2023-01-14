@@ -19,3 +19,4 @@ Stream<Path> stream = Files.walk(path); //перебор включая влож
 9) Бесконечных стрим с помощью Stream.generate: DoubleStream.generate(Math::random)
 10) Стрим с помощью методов range(), rangeClosed(): IntStream.range(0, 100); 
 11) Параллельный стрим: collection.parallelStream()
+12) Из строки, с помощью метода chars(): “123”.chars()
