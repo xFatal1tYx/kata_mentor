@@ -1,0 +1,21 @@
+Способы создания стрима
+
+1) Пустой стрим: Stream.empty()
+2) Стрим из указанных элементов: Stream.of("1", "2", "3")
+3) Стрим из массива: Arrays.stream(array)
+4) Стрим из List: list.stream()
+5) Стрим из Map: map.entrySet().stream()
+6) Стрим из файла или reader:
+- метод lines() / tokens()
+Stream<String> stream = reader.lines() //BufferedReader
+Stream<String> stream = reader.tokens() //Scanner
+- методы list() и walk()
+Stream<Path> stream = Files.list(path); //перебор текущей директории
+Stream<Path> stream = Files.walk(path); //перебор включая вложенные папки
+(каждая строка в файле будет отдельным элементом в стриме): Files.lines(путь_к_файлу)
+
+7) С помощью Stream.builder: Stream.builder().add("a1").add("a2").add("a3").build()
+8) Бесконечный стрим с помощью Stream.iterate: Stream.iterate(1, n -> n + 1)
+9) Бесконечных стрим с помощью Stream.generate: DoubleStream.generate(Math::random)
+10) Стрим с помощью методов range(), rangeClosed(): IntStream.range(0, 100); 
+11) Параллельный стрим: collection.parallelStream()
