@@ -5,7 +5,7 @@ abstract class Animal {
 
     // конструктор, для инициализации полей, при создании наследника
     Animal(String name, String color) {
-        this.name = weight;
+        this.name = name;
         this.color = color;
     }
 
